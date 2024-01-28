@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Login (credentials: test / test)
+          </div>
+          <div class="card-body">
+            <form 
+              [formGroup]="form" 
+              (ngSubmit)="login()">
+
+              <div class="mb-3">
+                <label 
+                    for="username" 
+                    class="form-label">
+                    Username
+                </label>
+                <input 
+                    id="username"
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Enter your username"
+                    formControlName="username"/>
+              </div>
+              <div class="mb-3">
+                <label 
+                    for="password" 
+                    class="form-label">
+                    Password
+                </label>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password" 
+                    placeholder="Enter your password"
+                    formControlName="password"/>
+              </div>
+
+              <div 
+                *ngIf="form.hasLoginInvalidError"
+                class="alert alert-danger" 
+                role="alert">                  
+                Incorrect username or password. Please try again.
+              </div>
+              
+              <button 
+                type="submit" 
+                class="btn btn-primary"
+                [disabled]="form.areRequiredFieldMssing">
+                Login 
+            </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

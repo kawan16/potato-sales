@@ -1,0 +1,85 @@
+<!-- product-form.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Create New Product
+          </div>
+          <div class="card-body">
+            <form
+                [formGroup]="form" 
+                (ngSubmit)="add()">
+                <div class="mb-3">
+                    <label 
+                        for="productName" 
+                        class="form-label">
+                        Product Name
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="productName" 
+                        formControlName="productName">
+                </div>
+            
+                <div class="mb-3">
+                    <label 
+                        for="productID" 
+                        class="form-label">
+                        Product ID
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="productID" 
+                        formControlName="productID">
+                </div>
+            
+                <div class="mb-3">
+                    <label 
+                        for="productManager" 
+                        class="form-label">
+                        Product Manager
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="productManager" 
+                        formControlName="productManager">
+                </div>
+            
+                <div class="mb-3">
+                    <label 
+                        for="salesStartDate" 
+                        class="form-label">
+                        Sales Start Date
+                    </label>
+                    <input 
+                        type="date" 
+                        class="form-control" 
+                        id="salesStartDate"
+                        formControlName="productSalesStartDate">
+                </div>
+            
+                <button 
+                    type="button" 
+                    class="btn btn-outline-primary me-2"
+                    (click)=reset()>
+                    Reset
+                </button>
+                <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="form.invalid">
+                    Submit {{form.errors}}
+                </button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+  
